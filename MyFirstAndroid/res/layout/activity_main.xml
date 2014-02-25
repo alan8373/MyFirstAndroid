@@ -1,35 +1,43 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?><RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <EditText android:id="@+id/edit_message"
-        android:layout_weight="1"
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:hint="@string/edit_message" />
-
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:layout_weight="1.00"
-        android:src="@drawable/ic_action_photo" />
-
     <Button
-        android:layout_width="wrap_content"
+        android:id="@+id/button1"
+        android:layout_width="40dp"
         android:layout_height="60dp"
-        android:text="@string/button_send"
-        android:layout_weight="1"
-        android:onClick="sendMessage" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:onClick="sendMessage"
+        android:text="@string/button_send" />
 
-    <FrameLayout
-	    android:id="@+id/camera_preview"
-    	android:layout_width="fill_parent"
-	    android:layout_height="60dp"
-    	android:layout_weight="1"
-    />
-</LinearLayout>
+    <EditText
+        android:id="@+id/edit_message"
+        android:layout_width="40dp"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/button1"
+        android:ems="10"
+        android:hint="@string/edit_message" />
+    
+    <VideoView
+        android:id="@+id/videoView"
+        android:layout_width="99dp"
+        android:layout_height="190dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true" />
+
+    <SurfaceView
+        android:id="@+id/surface_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/videoView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/edit_message" />
+
+</RelativeLayout>
